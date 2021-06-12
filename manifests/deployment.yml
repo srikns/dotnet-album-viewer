@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: schoolofdevopsalbumviewer 
+spec:
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: schoolofdevopsalbumviewer
+  template:
+    metadata:
+      labels:
+        app: schoolofdevopsalbumviewer 
+    spec:
+      containers:
+        - name: schoolofdevopsalbumviewer 
+          image: sofdreg.azurecr.io/schoolofdevops/albumviewer
+          ports:
+          - containerPort: 80
